@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-zh="加入我们 - 数形未来" data-en="Join Us - ShuXingFuture">加入我们 - 数形未来</title>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=SF+Pro+Text:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --bg-tertiary: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --accent-primary: #00d4aa;
+            --accent-secondary: #7c3aed;
+            --accent-tertiary: #f59e0b;
+            --border-color: #333333;
+            --shadow-glow: 0 0 20px rgba(0, 212, 170, 0.3);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo h2 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .language-switch {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border-color: var(--accent-primary);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(0, 212, 170, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .positions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .position-card {
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .position-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .position-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .position-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow), var(--shadow-card);
+            border-color: var(--accent-primary);
+        }
+
+        .position-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .position-card .position-type {
+            color: var(--accent-primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .position-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .position-card .requirements {
+            margin-bottom: 1.5rem;
+        }
+
+        .position-card .requirements h4 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .position-card .requirements ul {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+        }
+
+        .position-card .requirements li {
+            margin-bottom: 0.3rem;
+        }
+
+        .apply-button {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: var(--bg-primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .apply-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .apply-button:hover::before {
+            left: 100%;
+        }
+
+        .apply-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow), var(--shadow-card);
+            border-color: var(--accent-primary);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .benefit-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: var(--bg-primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--accent-primary);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        .footer {
+            background: var(--bg-secondary);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .positions-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+        }
+
+        /* 添加一些动画效果 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .position-card:hover,
+        .benefit-card:hover {
+            animation: float 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2 data-zh="数形未来" data-en="ShuXingFuture">数形未来</h2>
+                <span class="logo-subtitle" data-zh="ShuXingFuture" data-en="Mathematical Data Excellence">ShuXingFuture</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+                <li><a href="index.html#features" data-zh="技术特性" data-en="Features">技术特性</a></li>
+                <li><a href="index.html#cases" data-zh="应用" data-en="Applications">应用</a></li>
+                <li><a href="data-sample.html" data-zh="数据样本" data-en="Data Samples">数据样本</a></li>
+                <li><a href="solve-me-llm-3.html" data-zh="SolveMeLLM-3.0" data-en="SolveMeLLM-3.0">SolveMeLLM-3.0</a></li>
+                <li><a href="academic.html" data-zh="学术交流" data-en="Academic">学术交流</a></li>
+                <li><a href="about.html" data-zh="关于" data-en="About">关于</a></li>
+                <li><a href="careers.html" data-zh="加入" data-en="Join">加入</a></li>
+            </ul>
+            <div class="language-switch">
+                <button class="lang-btn active" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title" data-zh="加入我们" data-en="Join Us">加入我们</h1>
+            <p class="hero-subtitle" data-zh="与我们一起创造AI的未来" data-en="Create the Future of AI with Us">与我们一起创造AI的未来</p>
+            <p class="hero-description" data-zh="如果你相信数学的力量，如果你追求认知的突破，如果你渴望改变世界，那么数形未来就是你的舞台。我们正在寻找最优秀的人才，一起构建基于JieWo方程v7.5的认知AI系统。" data-en="If you believe in the power of mathematics, if you pursue cognitive breakthroughs, if you aspire to change the world, then ShuXingFuture is your stage. We are looking for the best talent to build cognitive AI systems based on JieWo Equation v7.5 together.">如果你相信数学的力量，如果你追求认知的突破，如果你渴望改变世界，那么数形未来就是你的舞台。我们正在寻找最优秀的人才，一起构建基于JieWo方程v7.5的认知AI系统。</p>
+        </div>
+    </section>
+
+    <!-- 职位列表 -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="开放职位" data-en="Open Positions">开放职位</h2>
+            <div class="positions-grid">
+                <!-- 大模型架构师 -->
+                <div class="position-card">
+                    <div class="position-type" data-zh="技术专家" data-en="Technical Expert">技术专家</div>
+                    <h3 data-zh="大模型架构师" data-en="Large Language Model Architect">大模型架构师</h3>
+                    <p data-zh="负责设计和实现基于JieWo方程v7.5的五维认知架构，构建下一代认知AI系统。你将与我们的核心团队一起，将数学理论转化为可工作的AI系统。" data-en="Responsible for designing and implementing five-dimensional cognitive architecture based on JieWo Equation v7.5, building next-generation cognitive AI systems. You will work with our core team to transform mathematical theories into working AI systems.">负责设计和实现基于JieWo方程v7.5的五维认知架构，构建下一代认知AI系统。你将与我们的核心团队一起，将数学理论转化为可工作的AI系统。</p>
+                    
+                    <div class="requirements">
+                        <h4 data-zh="任职要求" data-en="Requirements">任职要求</h4>
+                        <ul>
+                            <li data-zh="计算机科学或相关专业博士学位" data-en="PhD in Computer Science or related field">计算机科学或相关专业博士学位</li>
+                            <li data-zh="5年以上大模型研发经验" data-en="5+ years of experience in large model development">5年以上大模型研发经验</li>
+                            <li data-zh="精通Transformer架构和注意力机制" data-en="Proficient in Transformer architecture and attention mechanisms">精通Transformer架构和注意力机制</li>
+                            <li data-zh="熟悉认知科学和心理学理论" data-en="Familiar with cognitive science and psychology theories">熟悉认知科学和心理学理论</li>
+                            <li data-zh="具备数学建模和算法设计能力" data-en="Strong mathematical modeling and algorithm design skills">具备数学建模和算法设计能力</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="mailto:tyou70663@gmail.com?subject=大模型架构师职位申请" class="apply-button" data-zh="立即申请" data-en="Apply Now">立即申请</a>
+                </div>
+
+                <!-- AI推理专家 -->
+                <div class="position-card">
+                    <div class="position-type" data-zh="技术专家" data-en="Technical Expert">技术专家</div>
+                    <h3 data-zh="AI推理专家" data-en="AI Reasoning Specialist">AI推理专家</h3>
+                    <p data-zh="专注于因果推理和逻辑推理算法的研发，构建能够进行深度思考的AI系统。你将负责实现JieWo协议中的推理机制，让AI具备真正的思维能力。" data-en="Focus on causal reasoning and logical reasoning algorithm development, building AI systems capable of deep thinking. You will be responsible for implementing reasoning mechanisms in the JieWo protocol, enabling AI to have real thinking capabilities.">专注于因果推理和逻辑推理算法的研发，构建能够进行深度思考的AI系统。你将负责实现JieWo协议中的推理机制，让AI具备真正的思维能力。</p>
+                    
+                    <div class="requirements">
+                        <h4 data-zh="任职要求" data-en="Requirements">任职要求</h4>
+                        <ul>
+                            <li data-zh="人工智能或数学专业博士学位" data-en="PhD in Artificial Intelligence or Mathematics">人工智能或数学专业博士学位</li>
+                            <li data-zh="3年以上推理算法研发经验" data-en="3+ years of experience in reasoning algorithm development">3年以上推理算法研发经验</li>
+                            <li data-zh="精通贝叶斯推理和因果推断" data-en="Proficient in Bayesian reasoning and causal inference">精通贝叶斯推理和因果推断</li>
+                            <li data-zh="熟悉逻辑编程和知识表示" data-en="Familiar with logic programming and knowledge representation">熟悉逻辑编程和知识表示</li>
+                            <li data-zh="具备系统架构设计能力" data-en="Strong system architecture design capabilities">具备系统架构设计能力</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="mailto:tyou70663@gmail.com?subject=AI推理专家职位申请" class="apply-button" data-zh="立即申请" data-en="Apply Now">立即申请</a>
+                </div>
+
+                <!-- 数据质量工程师 -->
+                <div class="position-card">
+                    <div class="position-type" data-zh="工程师" data-en="Engineer">工程师</div>
+                    <h3 data-zh="数据质量工程师" data-en="Data Quality Engineer">数据质量工程师</h3>
+                    <p data-zh="负责实现JieWo方程v7.5的数据质量验证体系，构建15个验证规则和16种拒绝码系统。你将确保我们生产的数据达到最高质量标准。" data-en="Responsible for implementing the data quality verification system of JieWo Equation v7.5, building 15 validation rules and 16 rejection code systems. You will ensure that the data we produce meets the highest quality standards.">负责实现JieWo方程v7.5的数据质量验证体系，构建15个验证规则和16种拒绝码系统。你将确保我们生产的数据达到最高质量标准。</p>
+                    
+                    <div class="requirements">
+                        <h4 data-zh="任职要求" data-en="Requirements">任职要求</h4>
+                        <ul>
+                            <li data-zh="计算机科学或数据科学硕士学位" data-en="Master's degree in Computer Science or Data Science">计算机科学或数据科学硕士学位</li>
+                            <li data-zh="2年以上数据质量相关经验" data-en="2+ years of data quality related experience">2年以上数据质量相关经验</li>
+                            <li data-zh="精通Python和数据处理框架" data-en="Proficient in Python and data processing frameworks">精通Python和数据处理框架</li>
+                            <li data-zh="熟悉数据验证和清洗技术" data-en="Familiar with data validation and cleaning techniques">熟悉数据验证和清洗技术</li>
+                            <li data-zh="具备自动化测试和监控经验" data-en="Experience in automated testing and monitoring">具备自动化测试和监控经验</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="mailto:tyou70663@gmail.com?subject=数据质量工程师职位申请" class="apply-button" data-zh="立即申请" data-en="Apply Now">立即申请</a>
+                </div>
+
+                <!-- 产品经理 -->
+                <div class="position-card">
+                    <div class="position-type" data-zh="产品管理" data-en="Product Management">产品管理</div>
+                    <h3 data-zh="AI产品经理" data-en="AI Product Manager">AI产品经理</h3>
+                    <p data-zh="负责AI产品的规划和设计，将复杂的技术概念转化为用户友好的产品。你将与技术和市场团队紧密合作，推动产品从概念到市场。" data-en="Responsible for AI product planning and design, transforming complex technical concepts into user-friendly products. You will work closely with technical and market teams to drive products from concept to market.">负责AI产品的规划和设计，将复杂的技术概念转化为用户友好的产品。你将与技术和市场团队紧密合作，推动产品从概念到市场。</p>
+                    
+                    <div class="requirements">
+                        <h4 data-zh="任职要求" data-en="Requirements">任职要求</h4>
+                        <ul>
+                            <li data-zh="计算机科学或商业管理硕士学位" data-en="Master's degree in Computer Science or Business Management">计算机科学或商业管理硕士学位</li>
+                            <li data-zh="3年以上AI产品管理经验" data-en="3+ years of AI product management experience">3年以上AI产品管理经验</li>
+                            <li data-zh="熟悉AI技术和市场趋势" data-en="Familiar with AI technology and market trends">熟悉AI技术和市场趋势</li>
+                            <li data-zh="具备用户研究和产品设计能力" data-en="Strong user research and product design capabilities">具备用户研究和产品设计能力</li>
+                            <li data-zh="优秀的沟通和项目管理技能" data-en="Excellent communication and project management skills">优秀的沟通和项目管理技能</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="mailto:tyou70663@gmail.com?subject=AI产品经理职位申请" class="apply-button" data-zh="立即申请" data-en="Apply Now">立即申请</a>
+                </div>
+
+                <!-- 算法工程师 -->
+                <div class="position-card">
+                    <div class="position-type" data-zh="工程师" data-en="Engineer">工程师</div>
+                    <h3 data-zh="算法工程师" data-en="Algorithm Engineer">算法工程师</h3>
+                    <p data-zh="负责实现和优化JieWo方程v7.5中的各种算法，包括语义流率计算、时间一致性评分、贝叶斯更新等。你将确保算法的效率和准确性。" data-en="Responsible for implementing and optimizing various algorithms in JieWo Equation v7.5, including semantic flow rate calculation, temporal consistency scoring, Bayesian updates, etc. You will ensure algorithm efficiency and accuracy.">负责实现和优化JieWo方程v7.5中的各种算法，包括语义流率计算、时间一致性评分、贝叶斯更新等。你将确保算法的效率和准确性。</p>
+                    
+                    <div class="requirements">
+                        <h4 data-zh="任职要求" data-en="Requirements">任职要求</h4>
+                        <ul>
+                            <li data-zh="数学或计算机科学硕士学位" data-en="Master's degree in Mathematics or Computer Science">数学或计算机科学硕士学位</li>
+                            <li data-zh="2年以上算法开发经验" data-en="2+ years of algorithm development experience">2年以上算法开发经验</li>
+                            <li data-zh="精通数值计算和优化算法" data-en="Proficient in numerical computing and optimization algorithms">精通数值计算和优化算法</li>
+                            <li data-zh="熟悉机器学习和深度学习" data-en="Familiar with machine learning and deep learning">熟悉机器学习和深度学习</li>
+                            <li data-zh="具备高性能计算经验" data-en="Experience in high-performance computing">具备高性能计算经验</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="mailto:tyou70663@gmail.com?subject=算法工程师职位申请" class="apply-button" data-zh="立即申请" data-en="Apply Now">立即申请</a>
+                </div>
+
+                <!-- 软件工程师 -->
+                <div class="position-card">
+                    <div class="position-type" data-zh="工程师" data-en="Engineer">工程师</div>
+                    <h3 data-zh="软件工程师" data-en="Software Engineer">软件工程师</h3>
+                    <p data-zh="负责构建和维护我们的数据生产平台，包括API服务、用户界面和后端系统。你将确保系统的稳定性和可扩展性。" data-en="Responsible for building and maintaining our data production platform, including API services, user interfaces, and backend systems. You will ensure system stability and scalability.">负责构建和维护我们的数据生产平台，包括API服务、用户界面和后端系统。你将确保系统的稳定性和可扩展性。</p>
+                    
+                    <div class="requirements">
+                        <h4 data-zh="任职要求" data-en="Requirements">任职要求</h4>
+                        <ul>
+                            <li data-zh="计算机科学学士学位" data-en="Bachelor's degree in Computer Science">计算机科学学士学位</li>
+                            <li data-zh="3年以上软件开发经验" data-en="3+ years of software development experience">3年以上软件开发经验</li>
+                            <li data-zh="精通Python、JavaScript和数据库" data-en="Proficient in Python, JavaScript, and databases">精通Python、JavaScript和数据库</li>
+                            <li data-zh="熟悉微服务架构和云平台" data-en="Familiar with microservices architecture and cloud platforms">熟悉微服务架构和云平台</li>
+                            <li data-zh="具备DevOps和CI/CD经验" data-en="Experience in DevOps and CI/CD">具备DevOps和CI/CD经验</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="mailto:tyou70663@gmail.com?subject=软件工程师职位申请" class="apply-button" data-zh="立即申请" data-en="Apply Now">立即申请</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 福利待遇 -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="福利待遇" data-en="Benefits">福利待遇</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3 data-zh="有竞争力的薪酬" data-en="Competitive Compensation">有竞争力的薪酬</h3>
+                    <p data-zh="我们提供行业领先的薪酬待遇，包括基本工资、绩效奖金和股权激励，让每一位员工都能分享公司成长的红利。" data-en="We offer industry-leading compensation packages, including base salary, performance bonuses, and equity incentives, allowing every employee to share in the company's growth dividends.">我们提供行业领先的薪酬待遇，包括基本工资、绩效奖金和股权激励，让每一位员工都能分享公司成长的红利。</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 data-zh="灵活的工作环境" data-en="Flexible Work Environment">灵活的工作环境</h3>
+                    <p data-zh="支持远程办公和弹性工作时间，我们相信优秀的工作成果来自于自由的工作环境，而不是固定的办公时间。" data-en="Support for remote work and flexible working hours. We believe that excellent work results come from a free work environment, not fixed office hours.">支持远程办公和弹性工作时间，我们相信优秀的工作成果来自于自由的工作环境，而不是固定的办公时间。</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 data-zh="持续学习机会" data-en="Continuous Learning Opportunities">持续学习机会</h3>
+                    <p data-zh="提供丰富的培训资源和学习预算，支持员工参加国际会议、在线课程和专业认证，持续提升专业技能。" data-en="Provide rich training resources and learning budgets, support employees to attend international conferences, online courses, and professional certifications, continuously improving professional skills.">提供丰富的培训资源和学习预算，支持员工参加国际会议、在线课程和专业认证，持续提升专业技能。</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 data-zh="前沿技术挑战" data-en="Cutting-edge Technical Challenges">前沿技术挑战</h3>
+                    <p data-zh="参与最前沿的AI技术研发，与顶级专家合作，解决最具挑战性的技术问题，推动AI技术的边界。" data-en="Participate in cutting-edge AI technology R&D, collaborate with top experts, solve the most challenging technical problems, and push the boundaries of AI technology.">参与最前沿的AI技术研发，与顶级专家合作，解决最具挑战性的技术问题，推动AI技术的边界。</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 data-zh="健康保障" data-en="Health Benefits">健康保障</h3>
+                    <p data-zh="提供全面的医疗保险和健康体检，关注员工的身心健康，确保大家能够以最佳状态投入工作。" data-en="Provide comprehensive medical insurance and health checkups, care for employees' physical and mental health, and ensure everyone can work at their best.">提供全面的医疗保险和健康体检，关注员工的身心健康，确保大家能够以最佳状态投入工作。</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 data-zh="团队文化" data-en="Team Culture">团队文化</h3>
+                    <p data-zh="开放包容的团队文化，鼓励创新和试错，尊重每一个想法，让每个人都能在团队中找到自己的价值和归属感。" data-en="Open and inclusive team culture, encouraging innovation and trial and error, respecting every idea, allowing everyone to find their value and sense of belonging in the team.">开放包容的团队文化，鼓励创新和试错，尊重每一个想法，让每个人都能在团队中找到自己的价值和归属感。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行动号召 -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title" data-zh="准备好加入我们了吗？" data-en="Ready to Join Us?">准备好加入我们了吗？</h2>
+            <p class="cta-description" data-zh="如果你对我们的技术感兴趣，如果你想要参与改变AI历史的项目，请立即联系我们。我们期待与你一起创造AI的未来。" data-en="If you are interested in our technology, if you want to participate in projects that will change AI history, please contact us immediately. We look forward to creating the future of AI with you.">如果你对我们的技术感兴趣，如果你想要参与改变AI历史的项目，请立即联系我们。我们期待与你一起创造AI的未来。</p>
+            <div class="cta-buttons">
+                <a href="mailto:tyou70663@gmail.com" class="cta-button" data-zh="发送简历" data-en="Send Resume">发送简历</a>
+                <a href="about.html" class="cta-button secondary" data-zh="了解我们" data-en="Learn About Us">了解我们</a>
+                <a href="solve-me-llm-3.html" class="cta-button secondary" data-zh="查看技术" data-en="View Technology">查看技术</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-zh="数形未来" data-en="ShuXingFuture">数形未来</h3>
+                    <p data-zh="基于数学方程的高质量数据生产" data-en="High-quality data production based on mathematical equations">基于数学方程的高质量数据生产</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-zh="产品" data-en="Products">产品</h4>
+                    <ul>
+                        <li><a href="index.html#features" data-zh="技术特性" data-en="Features">技术特性</a></li>
+                        <li><a href="data-sample.html" data-zh="数据样本" data-en="Data Samples">数据样本</a></li>
+                        <li><a href="index.html#cases" data-zh="应用场景" data-en="Applications">应用场景</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-zh="公司" data-en="Company">公司</h4>
+                    <ul>
+                        <li><a href="about.html" data-zh="关于我们" data-en="About Us">关于我们</a></li>
+                        <li><a href="careers.html" data-zh="加入我们" data-en="Join Us">加入我们</a></li>
+                        <li><a href="mailto:tyou70663@gmail.com" data-zh="联系我们" data-en="Contact Us">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-zh="联系方式" data-en="Contact">联系方式</h4>
+                    <p data-zh="邮箱: tyou70663@gmail.com" data-en="Email: tyou70663@gmail.com">邮箱: tyou70663@gmail.com</p>
+                    <p data-zh="电话: +86 17889444435" data-en="Phone: +86 17889444435">电话: +86 17889444435</p>
+                    <p data-zh="地址: 广州天河保利克洛维" data-en="Address: Poly Clover, Tianhe District, Guangzhou">地址: 广州天河保利克洛维</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 数形未来 ShuXingFuture. <span data-zh="保留所有权利" data-en="All rights reserved">保留所有权利</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

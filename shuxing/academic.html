@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-zh="学术交流 - 数形未来" data-en="Academic Exchange - ShuXingFuture">学术交流 - 数形未来</title>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=SF+Pro+Text:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --bg-tertiary: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --accent-primary: #00d4aa;
+            --accent-secondary: #7c3aed;
+            --accent-tertiary: #f59e0b;
+            --border-color: #333333;
+            --shadow-glow: 0 0 20px rgba(0, 212, 170, 0.3);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo h2 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .language-switch {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border-color: var(--accent-primary);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(0, 212, 170, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .academic-card {
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .academic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .academic-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .academic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow), var(--shadow-card);
+            border-color: var(--accent-primary);
+        }
+
+        .academic-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .academic-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .academic-card .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .academic-card .card-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .academic-card .card-status {
+            background: rgba(0, 212, 170, 0.2);
+            color: var(--accent-primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 212, 170, 0.3);
+        }
+
+        .academic-card .card-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .card-link {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: var(--bg-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .card-link:hover::before {
+            left: 100%;
+        }
+
+        .card-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .card-link.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--accent-primary);
+        }
+
+        .card-link.secondary:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        .research-section {
+            background: var(--bg-primary);
+            padding: 80px 0;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .research-item {
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .research-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .research-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow), var(--shadow-card);
+            border-color: var(--accent-primary);
+        }
+
+        .research-item h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .research-item p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .research-item .research-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .research-tag {
+            background: rgba(124, 58, 237, 0.2);
+            color: var(--accent-secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .community-section {
+            background: var(--bg-secondary);
+            padding: 80px 0;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .community-card {
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .community-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .community-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .community-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow), var(--shadow-card);
+            border-color: var(--accent-primary);
+        }
+
+        .community-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .community-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .community-card .community-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: var(--bg-primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--accent-primary);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        .footer {
+            background: var(--bg-secondary);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .academic-grid,
+            .research-grid,
+            .community-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .card-links {
+                flex-direction: column;
+            }
+
+            .community-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* 添加一些动画效果 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .academic-card:hover,
+        .research-item:hover,
+        .community-card:hover {
+            animation: float 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2 data-zh="数形未来" data-en="ShuXingFuture">数形未来</h2>
+                <span class="logo-subtitle" data-zh="ShuXingFuture" data-en="Mathematical Data Excellence">ShuXingFuture</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+                <li><a href="index.html#features" data-zh="技术特性" data-en="Features">技术特性</a></li>
+                <li><a href="index.html#cases" data-zh="应用" data-en="Applications">应用</a></li>
+                <li><a href="data-sample.html" data-zh="数据样本" data-en="Data Samples">数据样本</a></li>
+                <li><a href="solve-me-llm-3.html" data-zh="SolveMeLLM-3.0" data-en="SolveMeLLM-3.0">SolveMeLLM-3.0</a></li>
+                <li><a href="academic.html" data-zh="学术交流" data-en="Academic">学术交流</a></li>
+                <li><a href="about.html" data-zh="关于" data-en="About">关于</a></li>
+                <li><a href="careers.html" data-zh="加入" data-en="Join">加入</a></li>
+            </ul>
+            <div class="language-switch">
+                <button class="lang-btn active" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title" data-zh="学术交流" data-en="Academic Exchange">学术交流</h1>
+            <p class="hero-subtitle" data-zh="推动认知AI的学术研究与技术发展" data-en="Advancing Academic Research and Technical Development in Cognitive AI">推动认知AI的学术研究与技术发展</p>
+            <p class="hero-description" data-zh="数形未来致力于与全球学术界合作，分享JieWo方程v7.5的研究成果，推动认知AI领域的理论突破和技术创新。我们欢迎研究人员、学者和开发者加入我们的学术社区。" data-en="ShuXingFuture is committed to collaborating with the global academic community, sharing research results of JieWo Equation v7.5, and promoting theoretical breakthroughs and technological innovation in the field of cognitive AI. We welcome researchers, scholars, and developers to join our academic community.">数形未来致力于与全球学术界合作，分享JieWo方程v7.5的研究成果，推动认知AI领域的理论突破和技术创新。我们欢迎研究人员、学者和开发者加入我们的学术社区。</p>
+        </div>
+    </section>
+
+    <!-- 学术论文 -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="学术论文" data-en="Academic Papers">学术论文</h2>
+            <div class="academic-grid">
+                <div class="academic-card">
+                    <h3 data-zh="JieWo方程v7.5：基于语义流速的认知AI数学框架" data-en="JieWo Equation v7.5: Mathematical Framework for Cognitive AI Based on Semantic Flow Rate">JieWo方程v7.5：基于语义流速的认知AI数学框架</h3>
+                    <p data-zh="本文提出了JieWo方程v7.5的完整数学框架，建立了语义流速、时间一致性、风险调节和伦理约束的统一数学模型，为认知AI提供了理论基础。" data-en="This paper presents the complete mathematical framework of JieWo Equation v7.5, establishing a unified mathematical model of semantic flow rate, temporal consistency, risk regulation, and ethical constraints, providing a theoretical foundation for cognitive AI.">本文提出了JieWo方程v7.5的完整数学框架，建立了语义流速、时间一致性、风险调节和伦理约束的统一数学模型，为认知AI提供了理论基础。</p>
+                    <div class="card-meta">
+                        <span class="card-date" data-zh="2025年10月" data-en="October 2025">2025年10月</span>
+                        <span class="card-status" data-zh="已发表" data-en="Published">已发表</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="mailto:tyou70663@gmail.com?subject=申请获取学术论文" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                    </div>
+                </div>
+
+                <div class="academic-card">
+                    <h3 data-zh="五维认知架构：从Self(x)到Reflection(R)的认知状态建模" data-en="Five-Dimensional Cognitive Architecture: Cognitive State Modeling from Self(x) to Reflection(R)">五维认知架构：从Self(x)到Reflection(R)的认知状态建模</h3>
+                    <p data-zh="研究五维认知架构的理论基础，包括自我认知、目标动机、伦理约束、执行路径和反馈机制的数学建模，为构建具有内在一致性的AI系统提供指导。" data-en="Research on the theoretical foundation of five-dimensional cognitive architecture, including mathematical modeling of self-awareness, goal motivation, ethical constraints, execution paths, and feedback mechanisms, providing guidance for building AI systems with internal consistency.">研究五维认知架构的理论基础，包括自我认知、目标动机、伦理约束、执行路径和反馈机制的数学建模，为构建具有内在一致性的AI系统提供指导。</p>
+                    <div class="card-meta">
+                        <span class="card-date" data-zh="2025年9月" data-en="September 2025">2025年9月</span>
+                        <span class="card-status" data-zh="已发表" data-en="Published">已发表</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="mailto:tyou70663@gmail.com?subject=申请获取学术论文" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                    </div>
+                </div>
+
+                <div class="academic-card">
+                    <h3 data-zh="数据质量验证的数学方法：15规则与16拒绝码系统" data-en="Mathematical Methods for Data Quality Verification: 15 Rules and 16 Rejection Code System">数据质量验证的数学方法：15规则与16拒绝码系统</h3>
+                    <p data-zh="提出了一套完整的数据质量验证数学方法，包括15个验证规则和16种拒绝码，确保数据生产的可追溯性、可验证性和可计算性。" data-en="Proposes a complete mathematical method for data quality verification, including 15 validation rules and 16 rejection codes, ensuring traceability, verifiability, and computability of data production.">提出了一套完整的数据质量验证数学方法，包括15个验证规则和16种拒绝码，确保数据生产的可追溯性、可验证性和可计算性。</p>
+                    <div class="card-meta">
+                        <span class="card-date" data-zh="2025年8月" data-en="August 2025">2025年8月</span>
+                        <span class="card-status" data-zh="已发表" data-en="Published">已发表</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="mailto:tyou70663@gmail.com?subject=申请获取学术论文" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                    </div>
+                </div>
+
+                <div class="academic-card">
+                    <h3 data-zh="认知AI的因果推理机制：基于贝叶斯更新的逻辑推理" data-en="Causal Reasoning Mechanisms in Cognitive AI: Logical Reasoning Based on Bayesian Updates">认知AI的因果推理机制：基于贝叶斯更新的逻辑推理</h3>
+                    <p data-zh="探索认知AI中的因果推理机制，提出基于贝叶斯更新的逻辑推理框架，使AI能够进行深度思考和逻辑分析。" data-en="Explores causal reasoning mechanisms in cognitive AI, proposing a logical reasoning framework based on Bayesian updates, enabling AI to perform deep thinking and logical analysis.">探索认知AI中的因果推理机制，提出基于贝叶斯更新的逻辑推理框架，使AI能够进行深度思考和逻辑分析。</p>
+                    <div class="card-meta">
+                        <span class="card-date" data-zh="2025年7月" data-en="July 2025">2025年7月</span>
+                        <span class="card-status" data-zh="审稿中" data-en="Under Review">审稿中</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="mailto:tyou70663@gmail.com?subject=申请获取预印本论文" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 研究合作 -->
+    <section class="research-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="研究合作" data-en="Research Collaboration">研究合作</h2>
+            <div class="research-grid">
+                <div class="research-item">
+                    <h4 data-zh="高校合作项目" data-en="University Collaboration Projects">高校合作项目</h4>
+                    <p data-zh="与清华大学、北京大学、MIT、Stanford等顶级高校建立合作关系，共同推进认知AI的理论研究和技术创新。" data-en="Establishing collaborative relationships with top universities including Tsinghua University, Peking University, MIT, and Stanford to jointly advance theoretical research and technological innovation in cognitive AI.">与清华大学、北京大学、MIT、Stanford等顶级高校建立合作关系，共同推进认知AI的理论研究和技术创新。</p>
+                    <div class="research-tags">
+                        <span class="research-tag" data-zh="高校合作" data-en="University Partnership">高校合作</span>
+                        <span class="research-tag" data-zh="理论研究" data-en="Theoretical Research">理论研究</span>
+                    </div>
+                    <a href="mailto:tyou70663@gmail.com?subject=申请高校合作项目" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                </div>
+
+                <div class="research-item">
+                    <h4 data-zh="研究资助计划" data-en="Research Funding Program">研究资助计划</h4>
+                    <p data-zh="为认知AI领域的研究人员提供资金支持，包括博士奖学金、博士后研究基金和独立研究项目资助。" data-en="Providing financial support for researchers in the field of cognitive AI, including doctoral scholarships, postdoctoral research funds, and independent research project funding.">为认知AI领域的研究人员提供资金支持，包括博士奖学金、博士后研究基金和独立研究项目资助。</p>
+                    <div class="research-tags">
+                        <span class="research-tag" data-zh="资金支持" data-en="Funding Support">资金支持</span>
+                        <span class="research-tag" data-zh="人才培养" data-en="Talent Development">人才培养</span>
+                    </div>
+                    <a href="mailto:tyou70663@gmail.com?subject=申请研究资助计划" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                </div>
+
+                <div class="research-item">
+                    <h4 data-zh="学术会议与研讨会" data-en="Academic Conferences and Seminars">学术会议与研讨会</h4>
+                    <p data-zh="定期举办认知AI学术会议和研讨会，邀请全球顶尖学者分享最新研究成果，促进学术交流和合作。" data-en="Regularly organizing academic conferences and seminars on cognitive AI, inviting top global scholars to share latest research results and promote academic exchange and collaboration.">定期举办认知AI学术会议和研讨会，邀请全球顶尖学者分享最新研究成果，促进学术交流和合作。</p>
+                    <div class="research-tags">
+                        <span class="research-tag" data-zh="学术会议" data-en="Academic Conference">学术会议</span>
+                        <span class="research-tag" data-zh="学术交流" data-en="Academic Exchange">学术交流</span>
+                    </div>
+                    <a href="mailto:tyou70663@gmail.com?subject=申请参与学术会议" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                </div>
+
+                <div class="research-item">
+                    <h4 data-zh="开源研究平台" data-en="Open Source Research Platform">开源研究平台</h4>
+                    <p data-zh="提供开源的研究平台和工具，包括JieWo方程实现、五维认知架构代码库和实验数据集，支持全球研究者的研究工作。" data-en="Providing open source research platforms and tools, including JieWo equation implementation, five-dimensional cognitive architecture codebase, and experimental datasets, supporting global researchers' work.">提供开源的研究平台和工具，包括JieWo方程实现、五维认知架构代码库和实验数据集，支持全球研究者的研究工作。</p>
+                    <div class="research-tags">
+                        <span class="research-tag" data-zh="开源平台" data-en="Open Source Platform">开源平台</span>
+                        <span class="research-tag" data-zh="研究工具" data-en="Research Tools">研究工具</span>
+                    </div>
+                    <a href="mailto:tyou70663@gmail.com?subject=申请访问开源研究平台" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学术社区 -->
+    <section class="community-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="学术社区" data-en="Academic Community">学术社区</h2>
+            <div class="community-grid">
+                <div class="community-card">
+                    <h4 data-zh="研究讨论区" data-en="Research Discussion Forum">研究讨论区</h4>
+                    <p data-zh="全球认知AI研究者的在线讨论平台，分享最新研究成果，讨论技术难题，促进学术合作。" data-en="Online discussion platform for global cognitive AI researchers to share latest research results, discuss technical challenges, and promote academic collaboration.">全球认知AI研究者的在线讨论平台，分享最新研究成果，讨论技术难题，促进学术合作。</p>
+                    <div class="community-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">1,247</span>
+                            <span class="stat-label" data-zh="活跃用户" data-en="Active Users">活跃用户</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3,891</span>
+                            <span class="stat-label" data-zh="讨论主题" data-en="Discussion Topics">讨论主题</span>
+                        </div>
+                    </div>
+                    <a href="mailto:tyou70663@gmail.com?subject=申请加入研究讨论区" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                </div>
+
+                <div class="community-card">
+                    <h4 data-zh="专家网络" data-en="Expert Network">专家网络</h4>
+                    <p data-zh="汇聚全球认知AI领域的顶尖专家，提供专业咨询、技术指导和合作机会。" data-en="Bringing together top experts in the field of cognitive AI worldwide, providing professional consultation, technical guidance, and collaboration opportunities.">汇聚全球认知AI领域的顶尖专家，提供专业咨询、技术指导和合作机会。</p>
+                    <div class="community-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label" data-zh="专家成员" data-en="Expert Members">专家成员</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">89</span>
+                            <span class="stat-label" data-zh="合作项目" data-en="Collaboration Projects">合作项目</span>
+                        </div>
+                    </div>
+                    <a href="mailto:tyou70663@gmail.com?subject=申请联系专家网络" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                </div>
+
+                <div class="community-card">
+                    <h4 data-zh="学生学者计划" data-en="Student Scholar Program">学生学者计划</h4>
+                    <p data-zh="为博士生、硕士生和年轻学者提供研究支持、导师指导和职业发展机会。" data-en="Providing research support, mentor guidance, and career development opportunities for PhD students, master's students, and young scholars.">为博士生、硕士生和年轻学者提供研究支持、导师指导和职业发展机会。</p>
+                    <div class="community-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">324</span>
+                            <span class="stat-label" data-zh="学生成员" data-en="Student Members">学生成员</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">67</span>
+                            <span class="stat-label" data-zh="导师配对" data-en="Mentor Pairings">导师配对</span>
+                        </div>
+                    </div>
+                    <a href="mailto:tyou70663@gmail.com?subject=申请学生学者计划" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                </div>
+
+                <div class="community-card">
+                    <h4 data-zh="技术文档中心" data-en="Technical Documentation Center">技术文档中心</h4>
+                    <p data-zh="提供完整的技术文档、API参考、代码示例和最佳实践指南，支持研究者的技术实现。" data-en="Providing complete technical documentation, API references, code examples, and best practice guides to support researchers' technical implementation.">提供完整的技术文档、API参考、代码示例和最佳实践指南，支持研究者的技术实现。</p>
+                    <div class="community-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">45</span>
+                            <span class="stat-label" data-zh="技术文档" data-en="Technical Docs">技术文档</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label" data-zh="代码库" data-en="Code Repositories">代码库</span>
+                        </div>
+                    </div>
+                    <a href="mailto:tyou70663@gmail.com?subject=申请查看技术文档" class="card-link" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行动号召 -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title" data-zh="加入我们的学术社区" data-en="Join Our Academic Community">加入我们的学术社区</h2>
+            <p class="cta-description" data-zh="无论你是研究人员、学者还是学生，我们都欢迎你加入数形未来的学术社区，共同推动认知AI的发展。" data-en="Whether you are a researcher, scholar, or student, we welcome you to join ShuXingFuture's academic community and work together to advance the development of cognitive AI.">无论你是研究人员、学者还是学生，我们都欢迎你加入数形未来的学术社区，共同推动认知AI的发展。</p>
+            <div class="cta-buttons">
+                <a href="mailto:tyou70663@gmail.com" class="cta-button" data-zh="联系我们" data-en="Contact Us">联系我们</a>
+                <a href="about.html" class="cta-button secondary" data-zh="了解更多" data-en="Learn More">了解更多</a>
+                <a href="solve-me-llm-3.html" class="cta-button secondary" data-zh="查看技术" data-en="View Technology">查看技术</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-zh="数形未来" data-en="ShuXingFuture">数形未来</h3>
+                    <p data-zh="基于数学方程的高质量数据生产" data-en="High-quality data production based on mathematical equations">基于数学方程的高质量数据生产</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-zh="产品" data-en="Products">产品</h4>
+                    <ul>
+                        <li><a href="index.html#features" data-zh="技术特性" data-en="Features">技术特性</a></li>
+                        <li><a href="data-sample.html" data-zh="数据样本" data-en="Data Samples">数据样本</a></li>
+                        <li><a href="index.html#cases" data-zh="应用场景" data-en="Applications">应用场景</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-zh="学术" data-en="Academic">学术</h4>
+                    <ul>
+                        <li><a href="academic.html" data-zh="学术交流" data-en="Academic Exchange">学术交流</a></li>
+                        <li><a href="solve-me-llm-3.html" data-zh="SolveMeLLM-3.0" data-en="SolveMeLLM-3.0">SolveMeLLM-3.0</a></li>
+                        <li><a href="about.html" data-zh="关于我们" data-en="About Us">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-zh="联系方式" data-en="Contact">联系方式</h4>
+                    <p data-zh="邮箱: tyou70663@gmail.com" data-en="Email: tyou70663@gmail.com">邮箱: tyou70663@gmail.com</p>
+                    <p data-zh="电话: +86 17889444435" data-en="Phone: +86 17889444435">电话: +86 17889444435</p>
+                    <p data-zh="地址: 广州天河保利克洛维" data-en="Address: Poly Clover, Tianhe District, Guangzhou">地址: 广州天河保利克洛维</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 数形未来 ShuXingFuture. <span data-zh="保留所有权利" data-en="All rights reserved">保留所有权利</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-zh="数形未来 ShuXingFuture - 基于数学方程的高质量数据生产" data-en="ShuXingFuture - High-Quality Data Production Based on Mathematical Equations">数形未来 ShuXingFuture - 基于数学方程的高质量数据生产</title>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=SF+Pro+Text:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2 data-zh="数形未来" data-en="ShuXingFuture">数形未来</h2>
+                <span class="logo-subtitle" data-zh="ShuXingFuture" data-en="Mathematical Data Excellence">ShuXingFuture</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" data-zh="首页" data-en="Home">首页</a></li>
+                <li><a href="#features" data-zh="技术特性" data-en="Features">技术特性</a></li>
+                <li><a href="#cases" data-zh="应用" data-en="Applications">应用</a></li>
+                <li><a href="data-sample.html" data-zh="数据样本" data-en="Data Samples">数据样本</a></li>
+                <li><a href="solve-me-llm-3.html" data-zh="SolveMeLLM-3.0" data-en="SolveMeLLM-3.0">SolveMeLLM-3.0</a></li>
+                <li><a href="academic.html" data-zh="学术交流" data-en="Academic">学术交流</a></li>
+                <li><a href="about.html" data-zh="关于" data-en="About">关于</a></li>
+                <li><a href="careers.html" data-zh="加入" data-en="Join">加入</a></li>
+            </ul>
+            <div class="language-switch">
+                <button class="lang-btn active" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主标题区域 -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span data-zh="数形未来" data-en="ShuXingFuture">数形未来</span> 
+                    <span class="highlight" data-zh="ShuXingFuture" data-en="Mathematical Data Excellence">ShuXingFuture</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span data-zh="不是AI生成，而是" data-en="Not AI Generated, But">不是AI生成，而是</span>
+                    <span class="math-highlight" data-zh="数学计算" data-en="Mathematical Computation">数学计算</span>
+                </p>
+                <p class="hero-description">
+                    <span data-zh="全球唯一基于学术研究的数据质量框架" data-en="The World's Only Academic Research-Based Data Quality Framework">全球唯一基于学术研究的数据质量框架</span><br>
+                    <span data-zh="让数据生产从猜测变成计算" data-en="Transforming Data Production from Guessing to Computing">让数据生产从猜测变成计算</span><br>
+                    <span data-zh="基于JieWo方程v7.5的数学验证体系" data-en="Mathematical Verification System Based on JieWo Equation v7.5">基于JieWo方程v7.5的数学验证体系</span><br>
+                    <span class="tech-badge" data-zh="现已集成SolveMe大模型" data-en="Now Integrated with SolveMe AI Model">现已集成SolveMe大模型</span>
+                </p>
+        <div class="hero-cta">
+            <button class="btn-primary" data-zh="了解JieWo方程" data-en="Learn JieWo Equation">了解JieWo方程</button>
+            <button class="btn-secondary" data-zh="查看数据样本" data-en="View Data Samples" onclick="window.location.href='data-sample.html'">查看数据样本</button>
+        </div>
+            </div>
+            <div class="hero-visual">
+                <div class="equation-display">
+                    <div class="equation-title" data-zh="JieWo方程核心" data-en="JieWo Equation Core">JieWo方程核心</div>
+                    <div class="equation-formula">
+                        <span class="math-symbol">Φ̇</span> = <span class="math-var">U</span> - λ<sub>Ξ</sub><span class="math-var">Ξ</span> - λ<sub>R</sub><span class="math-var">R</span> + λ<sub>M</sub><span class="math-var">M</span> - λ<sub>G</sub>Var(<span class="math-var">G</span>)
+                    </div>
+                    <div class="equation-explanation">
+                        <span data-zh="语义流速 = 信息增益 - 幻觉惩罚 - 风险调节 + 一致性奖励 - 合规波动" data-en="Semantic Flow Rate = Information Gain - Hallucination Penalty - Risk Regulation + Consistency Reward - Compliance Variance">语义流速 = 信息增益 - 幻觉惩罚 - 风险调节 + 一致性奖励 - 合规波动</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心差异对比 -->
+    <section id="comparison" class="comparison-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="为什么我们能做到别人做不到？" data-en="Why Can We Do What Others Cannot?">为什么我们能做到别人做不到？</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card traditional">
+                    <h3 data-zh="传统数据公司" data-en="Traditional Data Companies">传统数据公司</h3>
+                    <div class="comparison-content">
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="生产方式" data-en="Production Method">生产方式</span>
+                            <span class="item-value" data-zh="人工标注 + AI生成" data-en="Manual Annotation + AI Generation">人工标注 + AI生成</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="质量保证" data-en="Quality Assurance">质量保证</span>
+                            <span class="item-value" data-zh="抽样检查" data-en="Sampling Check">抽样检查</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="可信度" data-en="Credibility">可信度</span>
+                            <span class="item-value" data-zh="经验判断" data-en="Experience-based Judgment">经验判断</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="一致性" data-en="Consistency">一致性</span>
+                            <span class="item-value" data-zh="人工审核" data-en="Manual Review">人工审核</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="可追溯性" data-en="Traceability">可追溯性</span>
+                            <span class="item-value" data-zh="部分记录" data-en="Partial Records">部分记录</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="批量生产" data-en="Batch Production">批量生产</span>
+                            <span class="item-value" data-zh="质量不稳定" data-en="Unstable Quality">质量不稳定</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="vs-divider">
+                    <span>VS</span>
+                </div>
+                
+                <div class="comparison-card shuxing">
+                    <h3 data-zh="数形未来" data-en="ShuXingFuture">数形未来</h3>
+                    <div class="comparison-content">
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="生产方式" data-en="Production Method">生产方式</span>
+                            <span class="item-value highlight" data-zh="JieWo方程数学计算" data-en="JieWo Equation Mathematical Computation">JieWo方程数学计算</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="质量保证" data-en="Quality Assurance">质量保证</span>
+                            <span class="item-value highlight" data-zh="全量数学验证" data-en="Full Mathematical Verification">全量数学验证</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="可信度" data-en="Credibility">可信度</span>
+                            <span class="item-value highlight" data-zh="量化置信度(0.91)" data-en="Quantified Confidence (0.91)">量化置信度(0.91)</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="一致性" data-en="Consistency">一致性</span>
+                            <span class="item-value highlight" data-zh="事件同一性门自动验证" data-en="Event Identity Gate Auto-Verification">事件同一性门自动验证</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="可追溯性" data-en="Traceability">可追溯性</span>
+                            <span class="item-value highlight" data-zh="完整审计轨迹" data-en="Complete Audit Trail">完整审计轨迹</span>
+                        </div>
+                        <div class="comparison-item">
+                            <span class="item-label" data-zh="批量生产" data-en="Batch Production">批量生产</span>
+                            <span class="item-value highlight" data-zh="标准化高质量输出" data-en="Standardized High-Quality Output">标准化高质量输出</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术特性 -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="技术特性" data-en="Technical Features">技术特性</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 data-zh="SolveMe大模型集成" data-en="SolveMe AI Model Integration">SolveMe大模型集成</h3>
+                    <p data-zh="集成自研SolveMe大模型，智能分析事件、提取事实、构建因果链，专为高质量数据生产优化" data-en="Integrated with proprietary SolveMe AI model, intelligent event analysis, fact extraction, and causal chain construction, optimized for high-quality data production">集成自研SolveMe大模型，智能分析事件、提取事实、构建因果链，专为高质量数据生产优化</p>
+                    <a href="solve-me-llm-3.html" class="feature-link" data-zh="了解SolveMeLLM-3.0 →" data-en="Learn about SolveMeLLM-3.0 →">了解SolveMeLLM-3.0 →</a>
+                </div>
+                <div class="feature-card">
+                    <h3 data-zh="自动化流水线" data-en="Automated Pipeline">自动化流水线</h3>
+                    <p data-zh="6步完整工作流：事件定义→搜索→验证→门控→聚合→输出，全自动化执行" data-en="6-step complete workflow: Event Definition → Search → Verification → Gate → Aggregation → Output, fully automated execution">6步完整工作流：事件定义→搜索→验证→门控→聚合→输出，全自动化执行</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-zh="质量验证系统" data-en="Quality Validation System">质量验证系统</h3>
+                    <p data-zh="15个验证规则 + 16种拒绝码，确保每一条数据都符合JieWo Protocol v7.4.0标准" data-en="15 validation rules + 16 rejection codes, ensuring every data point meets JieWo Protocol v7.4.0 standards">15个验证规则 + 16种拒绝码，确保每一条数据都符合JieWo Protocol v7.4.0标准</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-zh="多领域支持" data-en="Multi-Domain Support">多领域支持</h3>
+                    <p data-zh="金融、医疗、技术、政府四大领域，可自定义领域参数和术语规范" data-en="Financial, Medical, Tech, Government domains with customizable parameters and terminology standards">金融、医疗、技术、政府四大领域，可自定义领域参数和术语规范</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-zh="实时监控" data-en="Real-time Monitoring">实时监控</h3>
+                    <p data-zh="完整的验证日志、质量指标、处理时间统计，支持健康检查和性能监控" data-en="Complete verification logs, quality metrics, processing time statistics, health checks and performance monitoring">完整的验证日志、质量指标、处理时间统计，支持健康检查和性能监控</p>
+                </div>
+                <div class="feature-card">
+                    <h3 data-zh="企业级部署" data-en="Enterprise Deployment">企业级部署</h3>
+                    <p data-zh="支持私有化部署，数据安全可控，满足企业级数据生产需求" data-en="Supports private deployment, data security controllable, meets enterprise-level data production requirements">支持私有化部署，数据安全可控，满足企业级数据生产需求</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 生产方式对比 -->
+    <section id="production" class="production-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="生产方式对比" data-en="Production Method Comparison">生产方式对比</h2>
+            <div class="production-flow">
+                <div class="flow-traditional">
+                    <h3 data-zh="传统方式" data-en="Traditional Method">传统方式</h3>
+                    <div class="flow-steps">
+                        <div class="flow-step" data-zh="数据收集" data-en="Data Collection">数据收集</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step" data-zh="人工检查" data-en="Manual Check">人工检查</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step" data-zh="质量评估" data-en="Quality Assessment">质量评估</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step" data-zh="结果输出" data-en="Output Results">结果输出</div>
+                    </div>
+                    <div class="flow-problems">
+                        <span class="problem" data-zh="主观性强" data-en="Highly Subjective">主观性强</span>
+                        <span class="problem" data-zh="效率低下" data-en="Low Efficiency">效率低下</span>
+                        <span class="problem" data-zh="质量不稳定" data-en="Unstable Quality">质量不稳定</span>
+                    </div>
+                </div>
+                
+                <div class="flow-shuxing">
+                    <h3 data-zh="数形未来" data-en="ShuXingFuture">数形未来</h3>
+                    <div class="flow-steps">
+                        <div class="flow-step ai-enhanced" data-zh="SolveMe事件定义" data-en="SolveMe Event Definition">SolveMe事件定义</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step ai-enhanced" data-zh="SolveMe搜索查询" data-en="SolveMe Search Queries">SolveMe搜索查询</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step ai-enhanced" data-zh="SolveMe事实提取" data-en="SolveMe Fact Extraction">SolveMe事实提取</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step math-enhanced" data-zh="事件同一性门" data-en="Event Identity Gate">事件同一性门</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step" data-zh="事实聚合" data-en="Fact Aggregation">事实聚合</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step ai-enhanced" data-zh="SolveMe因果链构建" data-en="SolveMe Causal Chain">SolveMe因果链构建</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step math-enhanced" data-zh="贝叶斯计算" data-en="Bayesian Computation">贝叶斯计算</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step ai-enhanced" data-zh="SolveMe输出生成" data-en="SolveMe Output Generation">SolveMe输出生成</div>
+                    </div>
+                    <div class="flow-benefits">
+                        <span class="benefit ai-tag" data-zh="SolveMe增强" data-en="SolveMe Enhanced">SolveMe增强</span>
+                        <span class="benefit math-tag" data-zh="数学验证" data-en="Math Verified">数学验证</span>
+                        <span class="benefit auto-tag" data-zh="全自动化" data-en="Fully Automated">全自动化</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据价值展示 -->
+    <section id="value" class="value-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="数据价值对比" data-en="Data Value Comparison">数据价值对比</h2>
+            <div class="value-comparison">
+                <div class="value-card traditional">
+                    <h3 data-zh="传统数据公司产出" data-en="Traditional Data Company Output">传统数据公司产出</h3>
+                    <ul class="value-list">
+                        <li data-zh="简单事件描述" data-en="Simple event description">简单事件描述</li>
+                        <li data-zh="基础时间信息" data-en="Basic time information">基础时间信息</li>
+                        <li data-zh="人工总结" data-en="Manual summary">人工总结</li>
+                        <li data-zh="质量未知" data-en="Unknown quality">质量未知</li>
+                    </ul>
+                </div>
+                
+                <div class="value-card shuxing">
+                    <h3 data-zh="数形未来产出" data-en="ShuXingFuture Output">数形未来产出</h3>
+                    <ul class="value-list">
+                        <li><strong data-zh="5步完整因果链" data-en="5-step Complete Causal Chain">5步完整因果链</strong></li>
+                        <li><strong data-zh="每步置信度量化" data-en="Quantified Confidence per Step">每步置信度量化</strong> (0.87-0.92)</li>
+                        <li><strong data-zh="歧义分数0.04" data-en="Ambiguity Score 0.04">歧义分数0.04</strong> <span data-zh="(极低)" data-en="(Extremely Low)">(极低)</span></li>
+                        <li><strong data-zh="全局评分0.89" data-en="Global Score 0.89">全局评分0.89</strong> <span data-zh="(高质量)" data-en="(High Quality)">(高质量)</span></li>
+                        <li><strong data-zh="完整验证日志" data-en="Complete Verification Log">完整验证日志</strong></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="quality-metrics">
+                <h3 data-zh="质量指标对比" data-en="Quality Metrics Comparison">质量指标对比</h3>
+                <div class="metrics-comparison-header">
+                    <div class="comparison-label traditional-label" data-zh="传统AI数据" data-en="Traditional AI Data">传统AI数据</div>
+                    <div class="comparison-label shuxing-label" data-zh="数形未来数据" data-en="ShuXingFuture Data">数形未来数据</div>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-label" data-zh="歧义分数 (越低越好)" data-en="Ambiguity Score (Lower is Better)">歧义分数 (越低越好)</div>
+                        <div class="metric-bars">
+                            <div class="metric-bar-row">
+                                <div class="bar-label shuxing-label" data-zh="数形未来" data-en="ShuXingFuture">数形未来</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill shuxing" style="width: 2%">
+                                        <span class="metric-value">0.02</span>
+                                        <span class="metric-status excellent" data-zh="极低歧义" data-en="Ultra Low Ambiguity">极低歧义</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric-bar-row">
+                                <div class="bar-label traditional-label" data-zh="传统AI" data-en="Traditional AI">传统AI</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill traditional" style="width: 85%">
+                                        <span class="metric-value">0.85</span>
+                                        <span class="metric-status bad" data-zh="极高歧义" data-en="Extremely High Ambiguity">极高歧义</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label" data-zh="全局评分 (越高越好)" data-en="Global Score (Higher is Better)">全局评分 (越高越好)</div>
+                        <div class="metric-bars">
+                            <div class="metric-bar-row">
+                                <div class="bar-label shuxing-label" data-zh="数形未来" data-en="ShuXingFuture">数形未来</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill shuxing" style="width: 95%">
+                                        <span class="metric-value">0.95</span>
+                                        <span class="metric-status excellent" data-zh="极高质量" data-en="Ultra High Quality">极高质量</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric-bar-row">
+                                <div class="bar-label traditional-label" data-zh="传统AI" data-en="Traditional AI">传统AI</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill traditional" style="width: 45%">
+                                        <span class="metric-value">0.45</span>
+                                        <span class="metric-status bad" data-zh="低质量" data-en="Low Quality">低质量</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label" data-zh="置信度 (越高越好)" data-en="Confidence (Higher is Better)">置信度 (越高越好)</div>
+                        <div class="metric-bars">
+                            <div class="metric-bar-row">
+                                <div class="bar-label shuxing-label" data-zh="数形未来" data-en="ShuXingFuture">数形未来</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill shuxing" style="width: 98%">
+                                        <span class="metric-value">0.98</span>
+                                        <span class="metric-status excellent" data-zh="极高置信" data-en="Ultra High Confidence">极高置信</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric-bar-row">
+                                <div class="bar-label traditional-label" data-zh="传统AI" data-en="Traditional AI">传统AI</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill traditional" style="width: 50%">
+                                        <span class="metric-value">0.50</span>
+                                        <span class="metric-status bad" data-zh="低置信" data-en="Low Confidence">低置信</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label" data-zh="一致性分数 (越高越好)" data-en="Consistency Score (Higher is Better)">一致性分数 (越高越好)</div>
+                        <div class="metric-bars">
+                            <div class="metric-bar-row">
+                                <div class="bar-label shuxing-label" data-zh="数形未来" data-en="ShuXingFuture">数形未来</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill shuxing" style="width: 96%">
+                                        <span class="metric-value">0.96</span>
+                                        <span class="metric-status excellent" data-zh="极高一致性" data-en="Ultra High Consistency">极高一致性</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric-bar-row">
+                                <div class="bar-label traditional-label" data-zh="传统AI" data-en="Traditional AI">传统AI</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill traditional" style="width: 40%">
+                                        <span class="metric-value">0.40</span>
+                                        <span class="metric-status bad" data-zh="低一致性" data-en="Low Consistency">低一致性</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label" data-zh="可验证性 (越高越好)" data-en="Verifiability (Higher is Better)">可验证性 (越高越好)</div>
+                        <div class="metric-bars">
+                            <div class="metric-bar-row">
+                                <div class="bar-label shuxing-label" data-zh="数形未来" data-en="ShuXingFuture">数形未来</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill shuxing" style="width: 99%">
+                                        <span class="metric-value">0.99</span>
+                                        <span class="metric-status excellent" data-zh="完全可验证" data-en="Fully Verifiable">完全可验证</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric-bar-row">
+                                <div class="bar-label traditional-label" data-zh="传统AI" data-en="Traditional AI">传统AI</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill traditional" style="width: 25%">
+                                        <span class="metric-value">0.25</span>
+                                        <span class="metric-status bad" data-zh="不可验证" data-en="Unverifiable">不可验证</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label" data-zh="因果链完整性 (越高越好)" data-en="Causal Chain Integrity (Higher is Better)">因果链完整性 (越高越好)</div>
+                        <div class="metric-bars">
+                            <div class="metric-bar-row">
+                                <div class="bar-label shuxing-label" data-zh="数形未来" data-en="ShuXingFuture">数形未来</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill shuxing" style="width: 97%">
+                                        <span class="metric-value">0.97</span>
+                                        <span class="metric-status excellent" data-zh="完整因果链" data-en="Complete Causal Chain">完整因果链</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric-bar-row">
+                                <div class="bar-label traditional-label" data-zh="传统AI" data-en="Traditional AI">传统AI</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill traditional" style="width: 20%">
+                                        <span class="metric-value">0.20</span>
+                                        <span class="metric-status bad" data-zh="无因果链" data-en="No Causal Chain">无因果链</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metrics-summary">
+                    <div class="summary-item">
+                        <span class="summary-label" data-zh="传统AI数据问题：" data-en="Traditional AI Data Issues:">传统AI数据问题：</span>
+                        <span class="summary-text" data-zh="极高歧义、低质量、低置信度、低一致性、不可验证、无因果链" data-en="Extremely high ambiguity, low quality, low confidence, low consistency, unverifiable, no causal chain">极高歧义、低质量、低置信度、低一致性、不可验证、无因果链</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label" data-zh="数形未来优势：" data-en="ShuXingFuture Advantages:">数形未来优势：</span>
+                        <span class="summary-text" data-zh="极低歧义、极高质量、极高置信度、极高一致性、完全可验证、完整因果链" data-en="Ultra low ambiguity, ultra high quality, ultra high confidence, ultra high consistency, fully verifiable, complete causal chain">极低歧义、极高质量、极高置信度、极高一致性、完全可验证、完整因果链</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 应用场景 -->
+    <section id="cases" class="cases-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="应用场景" data-en="Application Scenarios">应用场景</h2>
+            <p class="section-subtitle" data-zh="基于JieWo方程的高质量数据生产，覆盖几乎所有行业领域" data-en="High-quality data production based on JieWo Equation, covering almost all industry domains">基于JieWo方程的高质量数据生产，覆盖几乎所有行业领域</p>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <h3 data-zh="AI训练数据" data-en="AI Training Data">AI训练数据</h3>
+                    <p data-zh="高质量数据提升模型性能，减少幻觉和偏见" data-en="High-quality data improves model performance, reduces hallucinations and bias">高质量数据提升模型性能，减少幻觉和偏见</p>
+                    <div class="case-benefit" data-zh="模型准确率提升15-30%" data-en="Model Accuracy Improved by 15-30%">模型准确率提升15-30%</div>
+                </div>
+                <div class="case-card">
+                    <h3 data-zh="金融风控" data-en="Financial Risk Control">金融风控</h3>
+                    <p data-zh="可信数据降低决策风险，提高风控精度" data-en="Trustworthy data reduces decision risks and improves risk control accuracy">可信数据降低决策风险，提高风控精度</p>
+                    <div class="case-benefit" data-zh="风控准确率提升25%" data-en="Risk Control Accuracy Improved by 25%">风控准确率提升25%</div>
+                </div>
+                <div class="case-card">
+                    <h3 data-zh="医疗诊断" data-en="Medical Diagnosis">医疗诊断</h3>
+                    <p data-zh="准确数据提高诊断精度，减少误诊风险" data-en="Accurate data improves diagnostic precision and reduces misdiagnosis risks">准确数据提高诊断精度，减少误诊风险</p>
+                    <div class="case-benefit" data-zh="诊断准确率提升20%" data-en="Diagnostic Accuracy Improved by 20%">诊断准确率提升20%</div>
+                </div>
+                <div class="case-card">
+                    <h3 data-zh="智能制造" data-en="Smart Manufacturing">智能制造</h3>
+                    <p data-zh="设备预测维护，生产流程优化，质量追溯" data-en="Predictive maintenance, production optimization, quality traceability">设备预测维护，生产流程优化，质量追溯</p>
+                    <div class="case-benefit" data-zh="生产效率提升35%" data-en="Production Efficiency Improved by 35%">生产效率提升35%</div>
+                </div>
+                <div class="case-card">
+                    <h3 data-zh="零售电商" data-en="Retail & E-commerce">零售电商</h3>
+                    <p data-zh="精准营销，库存优化，客户洞察分析" data-en="Precision marketing, inventory optimization, customer insight analysis">精准营销，库存优化，客户洞察分析</p>
+                    <div class="case-benefit" data-zh="销售额提升28%" data-en="Sales Revenue Improved by 28%">销售额提升28%</div>
+                </div>
+                <div class="case-card">
+                    <h3 data-zh="交通物流" data-en="Transportation & Logistics">交通物流</h3>
+                    <p data-zh="路径优化，车辆维护预测，智能调度" data-en="Route optimization, vehicle maintenance prediction, intelligent scheduling">路径优化，车辆维护预测，智能调度</p>
+                    <div class="case-benefit" data-zh="运输成本降低22%" data-en="Transportation Cost Reduced by 22%">运输成本降低22%</div>
+                </div>
+                <div class="case-card">
+                    <h3 data-zh="政务治理" data-en="Government Governance">政务治理</h3>
+                    <p data-zh="智慧城市管理，公共安全监控，政策决策" data-en="Smart city management, public security monitoring, policy decision-making">智慧城市管理，公共安全监控，政策决策</p>
+                    <div class="case-benefit" data-zh="治理效率提升40%" data-en="Governance Efficiency Improved by 40%">治理效率提升40%</div>
+                </div>
+                <div class="case-card">
+                    <h3 data-zh="教育培训" data-en="Education & Training">教育培训</h3>
+                    <p data-zh="个性化学习推荐，教学质量评估，学习分析" data-en="Personalized learning recommendations, teaching quality assessment, learning analytics">个性化学习推荐，教学质量评估，学习分析</p>
+                    <div class="case-benefit" data-zh="学习效果提升32%" data-en="Learning Effectiveness Improved by 32%">学习效果提升32%</div>
+                </div>
+                <div class="case-card">
+                    <h3 data-zh="能源管理" data-en="Energy Management">能源管理</h3>
+                    <p data-zh="智能电网，可再生能源预测，能耗优化" data-en="Smart grid, renewable energy prediction, energy consumption optimization">智能电网，可再生能源预测，能耗优化</p>
+                    <div class="case-benefit" data-zh="能源效率提升26%" data-en="Energy Efficiency Improved by 26%">能源效率提升26%</div>
+                </div>
+                <div class="case-card">
+                    <h3 data-zh="农业科技" data-en="Agricultural Technology">农业科技</h3>
+                    <p data-zh="精准农业，农产品溯源，产量预测" data-en="Precision agriculture, agricultural product traceability, yield prediction">精准农业，农产品溯源，产量预测</p>
+                    <div class="case-benefit" data-zh="产量提升18%" data-en="Yield Improved by 18%">产量提升18%</div>
+                </div>
+                <div class="case-card">
+                    <h3 data-zh="环境保护" data-en="Environmental Protection">环境保护</h3>
+                    <p data-zh="污染监测预警，生态系统分析，环境评估" data-en="Pollution monitoring alerts, ecosystem analysis, environmental assessment">污染监测预警，生态系统分析，环境评估</p>
+                    <div class="case-benefit" data-zh="监测精度提升45%" data-en="Monitoring Accuracy Improved by 45%">监测精度提升45%</div>
+                </div>
+                <div class="case-card">
+                    <h3 data-zh="房地产" data-en="Real Estate">房地产</h3>
+                    <p data-zh="市场分析，风险评估，投资决策支持" data-en="Market analysis, risk assessment, investment decision support">市场分析，风险评估，投资决策支持</p>
+                    <div class="case-benefit" data-zh="投资回报率提升23%" data-en="ROI Improved by 23%">投资回报率提升23%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据质量对比 -->
+    <section id="quality-comparison" class="quality-comparison-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="数据质量决定AI性能" data-en="Data Quality Determines AI Performance">数据质量决定AI性能</h2>
+            <p class="section-subtitle" data-zh="同样的AI模型，不同的数据质量，截然不同的结果" data-en="Same AI model, different data quality, completely different results">同样的AI模型，不同的数据质量，截然不同的结果</p>
+            
+            <div class="comparison-showcase">
+                <!-- 大模型训练对比 -->
+                <div class="showcase-item">
+                    <div class="showcase-header">
+                        <h3 data-zh="大模型训练数据对比" data-en="Large Model Training Data Comparison">大模型训练数据对比</h3>
+                        <p data-zh="以GPT类模型训练为例" data-en="Using GPT-type model training as example">以GPT类模型训练为例</p>
+                    </div>
+                    <div class="comparison-cards">
+                        <div class="comparison-card-bad">
+                            <div class="card-header">
+                                <div class="card-icon"></div>
+                                <h4 data-zh="劣质数据" data-en="Poor Quality Data">劣质数据</h4>
+                            </div>
+                            <div class="problem-list">
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="数据来源混杂，包含虚假信息" data-en="Mixed data sources with false information">数据来源混杂，包含虚假信息</span>
+                                </div>
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="时间戳混乱，因果关系不清" data-en="Chaotic timestamps, unclear causal relationships">时间戳混乱，因果关系不清</span>
+                                </div>
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="重复内容过多，缺乏多样性" data-en="Too much duplicate content, lack of diversity">重复内容过多，缺乏多样性</span>
+                                </div>
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="标注不一致，质量参差不齐" data-en="Inconsistent annotations, uneven quality">标注不一致，质量参差不齐</span>
+                                </div>
+                            </div>
+                            <div class="consequence">
+                                <h5 data-zh="导致后果：" data-en="Consequences:">导致后果：</h5>
+                                <ul>
+                                    <li data-zh="模型产生幻觉，编造虚假信息" data-en="Model generates hallucinations and fabricates false information">模型产生幻觉，编造虚假信息</li>
+                                    <li data-zh="回答前后矛盾，逻辑混乱" data-en="Contradictory answers, logical confusion">回答前后矛盾，逻辑混乱</li>
+                                    <li data-zh="偏见严重，歧视性输出" data-en="Severe bias, discriminatory output">偏见严重，歧视性输出</li>
+                                    <li data-zh="准确率仅65%，用户信任度低" data-en="Only 65% accuracy, low user trust">准确率仅65%，用户信任度低</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="vs-divider-large">
+                            <span>VS</span>
+                        </div>
+                        
+                        <div class="comparison-card-good">
+                            <div class="card-header">
+                                <div class="card-icon"></div>
+                                <h4 data-zh="数形未来高质量数据" data-en="ShuXingFuture High-Quality Data">数形未来高质量数据</h4>
+                            </div>
+                            <div class="solution-list">
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="JieWo方程验证，来源权威可信" data-en="JieWo Equation verification, authoritative and credible sources">JieWo方程验证，来源权威可信</span>
+                                </div>
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="时间一致性验证，因果链清晰" data-en="Temporal consistency verification, clear causal chains">时间一致性验证，因果链清晰</span>
+                                </div>
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="事件同一性门，避免重复混淆" data-en="Event identity gate, avoiding duplicate confusion">事件同一性门，避免重复混淆</span>
+                                </div>
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="贝叶斯置信度，质量量化保证" data-en="Bayesian confidence, quantified quality assurance">贝叶斯置信度，质量量化保证</span>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <h5 data-zh="训练效果：" data-en="Training Results:">训练效果：</h5>
+                                <ul>
+                                    <li data-zh="模型回答准确，事实核查通过率95%" data-en="Accurate model responses, 95% fact-check pass rate">模型回答准确，事实核查通过率95%</li>
+                                    <li data-zh="逻辑一致性强，前后呼应" data-en="Strong logical consistency, coherent responses">逻辑一致性强，前后呼应</li>
+                                    <li data-zh="偏见大幅减少，公平性提升" data-en="Significantly reduced bias, improved fairness">偏见大幅减少，公平性提升</li>
+                                    <li data-zh="准确率提升至91%，用户信任度高" data-en="Accuracy improved to 91%, high user trust">准确率提升至91%，用户信任度高</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 金融风控对比 -->
+                <div class="showcase-item">
+                    <div class="showcase-header">
+                        <h3 data-zh="金融风控数据对比" data-en="Financial Risk Control Data Comparison">金融风控数据对比</h3>
+                        <p data-zh="以信贷风险评估为例" data-en="Using credit risk assessment as example">以信贷风险评估为例</p>
+                    </div>
+                    <div class="comparison-cards">
+                        <div class="comparison-card-bad">
+                            <div class="card-header">
+                                <div class="card-icon"></div>
+                                <h4 data-zh="传统数据" data-en="Traditional Data">传统数据</h4>
+                            </div>
+                            <div class="problem-list">
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="数据来源单一，信息不全面" data-en="Single data source, incomplete information">数据来源单一，信息不全面</span>
+                                </div>
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="更新滞后，时效性差" data-en="Delayed updates, poor timeliness">更新滞后，时效性差</span>
+                                </div>
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="数据质量未知，可靠性存疑" data-en="Unknown data quality, questionable reliability">数据质量未知，可靠性存疑</span>
+                                </div>
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="缺乏验证机制，错误率高" data-en="Lack of verification mechanism, high error rate">缺乏验证机制，错误率高</span>
+                                </div>
+                            </div>
+                            <div class="consequence">
+                                <h5 data-zh="业务影响：" data-en="Business Impact:">业务影响：</h5>
+                                <ul>
+                                    <li data-zh="误判率高达15%，损失巨大" data-en="Misjudgment rate up to 15%, huge losses">误判率高达15%，损失巨大</li>
+                                    <li data-zh="好客户被拒绝，业务流失" data-en="Good customers rejected, business lost">好客户被拒绝，业务流失</li>
+                                    <li data-zh="坏客户被放贷，坏账率上升" data-en="Bad customers approved, bad debt rate rising">坏客户被放贷，坏账率上升</li>
+                                    <li data-zh="监管合规风险，声誉受损" data-en="Regulatory compliance risks, reputation damaged">监管合规风险，声誉受损</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="vs-divider-large">
+                            <span>VS</span>
+                        </div>
+                        
+                        <div class="comparison-card-good">
+                            <div class="card-header">
+                                <div class="card-icon"></div>
+                                <h4 data-zh="数形未来数据" data-en="ShuXingFuture Data">数形未来数据</h4>
+                            </div>
+                            <div class="solution-list">
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="多源验证，信息全面准确" data-en="Multi-source verification, comprehensive and accurate information">多源验证，信息全面准确</span>
+                                </div>
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="实时更新，时效性强" data-en="Real-time updates, strong timeliness">实时更新，时效性强</span>
+                                </div>
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="置信度量化，可靠性明确" data-en="Quantified confidence, clear reliability">置信度量化，可靠性明确</span>
+                                </div>
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="完整审计轨迹，可追溯验证" data-en="Complete audit trail, traceable verification">完整审计轨迹，可追溯验证</span>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <h5 data-zh="业务效果：" data-en="Business Results:">业务效果：</h5>
+                                <ul>
+                                    <li data-zh="误判率降至3%，风险大幅降低" data-en="Misjudgment rate reduced to 3%, risk significantly lowered">误判率降至3%，风险大幅降低</li>
+                                    <li data-zh="好客户通过率提升，业务增长" data-en="Good customer approval rate increased, business growth">好客户通过率提升，业务增长</li>
+                                    <li data-zh="坏客户精准识别，坏账率下降" data-en="Bad customers accurately identified, bad debt rate decreased">坏客户精准识别，坏账率下降</li>
+                                    <li data-zh="合规性提升，监管认可" data-en="Compliance improved, regulatory recognition">合规性提升，监管认可</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 医疗诊断对比 -->
+                <div class="showcase-item">
+                    <div class="showcase-header">
+                        <h3 data-zh="医疗诊断数据对比" data-en="Medical Diagnosis Data Comparison">医疗诊断数据对比</h3>
+                        <p data-zh="以影像诊断AI为例" data-en="Using medical imaging AI as example">以影像诊断AI为例</p>
+                    </div>
+                    <div class="comparison-cards">
+                        <div class="comparison-card-bad">
+                            <div class="card-header">
+                                <div class="card-icon"></div>
+                                <h4 data-zh="低质量医疗数据" data-en="Low-Quality Medical Data">低质量医疗数据</h4>
+                            </div>
+                            <div class="problem-list">
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="标注不准确，医生水平参差" data-en="Inaccurate annotations, varying doctor expertise">标注不准确，医生水平参差</span>
+                                </div>
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="数据不完整，关键信息缺失" data-en="Incomplete data, missing key information">数据不完整，关键信息缺失</span>
+                                </div>
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="样本偏差，代表性不足" data-en="Sample bias, insufficient representativeness">样本偏差，代表性不足</span>
+                                </div>
+                                <div class="problem-item">
+                                    <span class="problem-icon"></span>
+                                    <span class="problem-text" data-zh="缺乏质量控制，错误传播" data-en="Lack of quality control, error propagation">缺乏质量控制，错误传播</span>
+                                </div>
+                            </div>
+                            <div class="consequence">
+                                <h5 data-zh="医疗风险：" data-en="Medical Risks:">医疗风险：</h5>
+                                <ul>
+                                    <li data-zh="误诊率高达12%，患者安全受威胁" data-en="Misdiagnosis rate up to 12%, patient safety threatened">误诊率高达12%，患者安全受威胁</li>
+                                    <li data-zh="漏诊严重疾病，延误治疗时机" data-en="Missed serious diseases, delayed treatment">漏诊严重疾病，延误治疗时机</li>
+                                    <li data-zh="过度诊断，增加患者负担" data-en="Over-diagnosis, increased patient burden">过度诊断，增加患者负担</li>
+                                    <li data-zh="医生信任度低，AI应用受阻" data-en="Low doctor trust, AI adoption hindered">医生信任度低，AI应用受阻</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="vs-divider-large">
+                            <span>VS</span>
+                        </div>
+                        
+                        <div class="comparison-card-good">
+                            <div class="card-header">
+                                <div class="card-icon"></div>
+                                <h4 data-zh="数形未来医疗数据" data-en="ShuXingFuture Medical Data">数形未来医疗数据</h4>
+                            </div>
+                            <div class="solution-list">
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="专家级标注，质量严格把控" data-en="Expert-level annotations, strict quality control">专家级标注，质量严格把控</span>
+                                </div>
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="数据完整性验证，信息齐全" data-en="Data completeness verification, comprehensive information">数据完整性验证，信息齐全</span>
+                                </div>
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="样本平衡，代表性充分" data-en="Balanced samples, sufficient representativeness">样本平衡，代表性充分</span>
+                                </div>
+                                <div class="solution-item">
+                                    <span class="solution-text" data-zh="多重验证机制，错误率极低" data-en="Multiple verification mechanisms, extremely low error rate">多重验证机制，错误率极低</span>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <h5 data-zh="医疗效果：" data-en="Medical Results:">医疗效果：</h5>
+                                <ul>
+                                    <li data-zh="误诊率降至2%，患者安全有保障" data-en="Misdiagnosis rate reduced to 2%, patient safety guaranteed">误诊率降至2%，患者安全有保障</li>
+                                    <li data-zh="疾病检出率提升，治疗及时" data-en="Disease detection rate improved, timely treatment">疾病检出率提升，治疗及时</li>
+                                    <li data-zh="诊断精准，减少不必要检查" data-en="Precise diagnosis, reduced unnecessary examinations">诊断精准，减少不必要检查</li>
+                                    <li data-zh="医生信任度高，AI广泛应用" data-en="High doctor trust, widespread AI adoption">医生信任度高，AI广泛应用</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="联系我们" data-en="Contact Us">联系我们</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 data-zh="数形未来 ShuXingFuture" data-en="ShuXingFuture">数形未来 ShuXingFuture</h3>
+                    <p data-zh="基于数学方程的高质量数据生产" data-en="High-quality data production based on mathematical equations">基于数学方程的高质量数据生产</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-label" data-zh="邮箱" data-en="Email">邮箱</span>
+                            <span class="contact-value">tyou70663@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label" data-zh="电话" data-en="Phone">电话</span>
+                            <span class="contact-value">+86 17889444435</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label" data-zh="地址" data-en="Address">地址</span>
+                            <span class="contact-value" data-zh="广州天河保利克洛维" data-en="Poly Clover, Tianhe District, Guangzhou">广州天河保利克洛维</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form name="contact" method="POST" action="mailto:tyou70663@gmail.com" enctype="text/plain">
+                        <input type="hidden" name="subject" value="数形未来网站咨询" />
+                        
+                        <input type="text" name="name" placeholder="姓名" data-placeholder-zh="姓名" data-placeholder-en="Name" required>
+                        <input type="email" name="email" placeholder="邮箱" data-placeholder-zh="邮箱" data-placeholder-en="Email" required>
+                        <input type="text" name="company" placeholder="公司" data-placeholder-zh="公司" data-placeholder-en="Company" required>
+                        <textarea name="message" placeholder="需求描述" data-placeholder-zh="需求描述" data-placeholder-en="Requirements Description" rows="4"></textarea>
+                        <button type="submit" class="btn-primary" data-zh="发送咨询" data-en="Send Inquiry">发送咨询</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3 data-zh="数形未来" data-en="ShuXingFuture">数形未来</h3>
+                    <p>ShuXingFuture</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#jiewo" data-zh="JieWo方程" data-en="JieWo Equation">JieWo方程</a>
+                    <a href="#production" data-zh="生产方式" data-en="Production Method">生产方式</a>
+                    <a href="#quality" data-zh="质量保证" data-en="Quality Assurance">质量保证</a>
+                    <a href="#cases" data-zh="应用案例" data-en="Applications">应用案例</a>
+                    <a href="about.html" data-zh="关于我们" data-en="About Us">关于我们</a>
+                    <a href="careers.html" data-zh="加入我们" data-en="Join Us">加入我们</a>
+                </div>
+                <div class="footer-copyright">
+                    <p data-zh="&copy; 2025 数形未来 ShuXingFuture. 保留所有权利." data-en="&copy; 2025 ShuXingFuture. All rights reserved.">&copy; 2025 数形未来 ShuXingFuture. 保留所有权利.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
